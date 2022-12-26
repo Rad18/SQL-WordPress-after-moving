@@ -1,0 +1,15 @@
+Use the code as below and swap in your old and new URLs, no trailing slashes. Also if necessary change the table prefix values where applicable (ie wp_ )
+
+UPDATE wp_options SET option_value = REPLACE(option_value, 'http://old-site.com', 'https://new-site.com') WHERE option_name = 'home' OR option_name = 'siteurl';
+
+UPDATE wp_posts SET post_content = REPLACE (post_content, 'http://old-site.com', 'https://new-site.com');
+
+UPDATE wp_postmeta SET meta_value = REPLACE (meta_value, 'http://old-site.com', 'https://new-site.com');
+
+UPDATE wp_options SET option_value = REPLACE(option_value, 'http://old-site.com', 'https://new-site.com') WHERE option_name = 'home' OR option_name = 'siteurl';
+
+UPDATE wp_posts SET post_content = REPLACE (post_content, 'http://old-site.com', 'https://new-site.com');
+
+UPDATE wp_postmeta SET meta_value = REPLACE (meta_value, 'http://old-site.com','https://new-site.com');
+
+UPDATE wp_posts SET guid = replace(guid, 'http://old-site.com','https://new-site.com');
